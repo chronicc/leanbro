@@ -1,9 +1,9 @@
 leanbro
 =======
 
-the most lean browser startpage.
+![fistbump with the word LEAN on it](images/icon128.png)
 
-> it's not an ass - it's your bro.
+the most lean browser startpage. it's not an ass - it's your bro.
 
 ## Motivation
 
