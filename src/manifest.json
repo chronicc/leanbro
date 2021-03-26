@@ -1,6 +1,6 @@
 {
     "name": "leanbro",
-    "description": "the most lean browser startpage.",
+    "description": "the leanest browser startpage.",
     "version": "1.0",
     "manifest_version": 3,
     "icons": {
@@ -13,7 +13,7 @@
         "newtab": "html/index.html"
     },
     "action": {
-        "default_title": "leanbro - the most lean browser startpage",
+        "default_title": "leanbro - the leanest browser startpage",
         "default_popup": "html/popup.html",
         "default_incon": {
             "16": "images/icon16.png",

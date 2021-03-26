@@ -2,34 +2,90 @@
 <html>
 
 <head>
-    <title>leanbro</title>
+    <title>the leanest browser startpage</title>
     <style>
         html,
-        body {
+        body,
+        div,
+        p {
             margin: 0;
             padding: 0;
             border: 0;
             font-size: 100%;
             font: inherit;
             vertical-align: baseline;
+            line-height: 1.2em;
         }
 
-        main {}
+        main {
+            color: #ffffff;
+            font-family: sans-serif;
+            position: fixed;
+            text-align: center;
+            top: 40%;
+            width: 100%;
+            z-index: 1000;
+        }
 
-        div#bg-image {
+        div#background {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
             height: 100%;
             left: 0;
+            position: fixed;
             top: 0;
             width: 100%;
-            position: fixed;
+            z-index: 1;
+        }
+
+        div#line {
+            border-bottom: 1px solid #ffffff;
+            display:inline-block;
+            height: 1px;
+            width: 60%;
+        }
+
+        div#clock {
+            font-size: 8em;
+        }
+
+        div#credits {
+            /* background-color: rgba(255, 255, 255, 0.5); */
+            bottom: 16px;
+            height: 100px;
+            left: 16px;
+            position: absolute;
+            width: 300px;
+            z-index: 900;
+        }
+
+        div#weather {
+            /* background-color: rgba(255, 255, 255, 0.5); */
+            height: 100px;
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            width: 300px;
+            z-index: 900;
+        }
+
+        p#salutation {
+            font-size: 4em;
         }
     </style>
 </head>
 
 <body>
-    <div id="bg-image"></div>
     <main>
+        <p id="salutation"></p>
+        <div id="line"></div>
+        <div id="clock"></div>
     </main>
+    <div id="background"></div>
+    <div id="credits"></div>
+    <div id="weather"></div>
+    <script src="../js/leanbro.js"></script>
 </body>
 
 </html>
