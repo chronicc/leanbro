@@ -2,13 +2,115 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/theme.css">
+    <title>leanbro: options</title>
+    <style>
+        html,
+        body,
+        div,
+        input,
+        p {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            line-height: 1.2em;
+        }
+
+        body {
+            background-color: #efefef;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1em;
+        }
+
+        div#options {
+            color: #222222;
+            background-color: #eaeaea;
+            border: 1px solid #cfcfcf;
+            border-radius: 16px;
+            font-family: sans-serif;
+            left: 50%;
+            margin: 16px 16px 16px -416px;
+            min-height: 400px;
+            padding: 16px;
+            position: relative;
+            width: 800px;
+        }
+
+        div.option {
+            margin: 0.5em 0;
+            width: 100%;
+        }
+
+        div.radio_spacer {
+            display: inline-block;
+            width: 2em;
+        }
+
+        div.option > input[type=radio] {
+            width: 2em;
+        }
+
+        div.option > input[type=text] {
+            float: right;
+            width: 550px;
+        }
+    </style>
 </head>
 
 <body>
     <div id="options">
+        <h1>leanbro // Options</h1>
+        <p>Options are automatically stored on change. Grey placeholders show the default value.</p>
+        <h2>Personalization</h2>
+        <form>
+            <div class="option">
+                <div class="radio_spacer"></div>
+                <label>Name</label>
+                <input type="text" id="text_username"/>
+            </div>
+        </form>
+        <h2>Image Source</h2>
+        <form>
+            <div class="option">
+                <input type="radio" id="radio_image_disabled" name="radio_image_source" value="disabled" />
+                <label>Disabled</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="radio_image_custom" name="radio_image_source" value="custom" />
+                <label>Custom Url</label>
+                <input type="text" id="text_custom_image_url" />
+            </div>
+            <div class="option">
+                <input type="radio" id="radio_image_pixabay" name="radio_image_source" value="pixabay" disabled="disabled" />
+                <label>Pixabay API Key</label>
+                <input type="text" id="text_pixabay_api_key" />
+            </div>
+            <div class="option">
+                <input type="radio" id="radio_image_wallhaven" name="radio_image_source" value="wallhaven" disabled="disabled" />
+                <label>Wallhaven API Key</label>
+                <input type="text" id="text_wallhaven_api_key" />
+            </div>
+        </form>
+        <h2>Visuals</h2>
+        <form>
+            <div class="option">
+                <div class="radio_spacer"></div>
+                <label>Background Color</label>
+                <input type="text" id="text_background_color"/>
+            </div>
+            <div class="option">
+                <div class="radio_spacer"></div>
+                <label>Font Family</label>
+                <input type="text" id="text_font_family"/>
+            </div>
+        </form>
     </div>
+    <script src="../js/defaults.js"></script>
+    <script src="../js/options.js"></script>
 </body>
-<script src="options.js"></script>
 
 </html>

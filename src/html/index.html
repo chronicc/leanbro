@@ -16,18 +16,8 @@
             vertical-align: baseline;
             line-height: 1.2em;
         }
-
-        main {
-            color: #ffffff;
-            font-family: sans-serif;
-            position: fixed;
-            text-align: center;
-            top: 40%;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        div#background {
+        
+        body {
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -37,6 +27,16 @@
             top: 0;
             width: 100%;
             z-index: 1;
+        }
+
+        main {
+            color: #ffffff;
+            font-family: sans-serif;
+            position: fixed;
+            text-align: center;
+            top: 40%;
+            width: 100%;
+            z-index: 1000;
         }
 
         div#line {
@@ -82,10 +82,10 @@
         <div id="line"></div>
         <div id="clock"></div>
     </main>
-    <div id="background"></div>
     <div id="credits"></div>
     <div id="weather"></div>
-    <script src="../js/leanbro.js"></script>
+    <script src="../js/defaults.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
