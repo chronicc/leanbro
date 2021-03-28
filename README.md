@@ -11,6 +11,10 @@ Existing browser startpage extensions are just nuts with all their advertising, 
 
 leanbro does not disturb you. It supports you with reaching and staying in [the zone](https://en.wikipedia.org/wiki/Flow_(psychology)).
 
+## Preview
+
+<a href="preview.png"><img src="preview.png" width="400" /></a>
+
 ## Features
 
 * Display a custom background image
