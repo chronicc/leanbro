@@ -17,6 +17,18 @@ leanbro does not disturb you. It supports you with reaching and staying in [the 
 * Salutation with custom name
 * Live Clock
 
+## Build
+
+Run `make package KEY_LOCATIO=/path/to/extension/key.pem` to create the initial extension.
+
+If you want to update the extension, increase the version number in the (manifest)[manifest.json] and run the package command.
+
+> Note: Currently the command line build feature of google-chrome is not working under Linux. In this case use the browser extension page to package the extension.
+
+## Install
+
+Drop and drag the *.crx file onto the extension page of your chrome browser and follow the instructions. After installing it, you can configure it via the extension popup symbol.
+
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
