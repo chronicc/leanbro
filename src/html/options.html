@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>leanbro: options</title>
+    <title>leanbro // options</title>
     <style>
         html,
         body,
@@ -23,11 +23,7 @@
             font-family: sans-serif;
         }
 
-        h1, h2, h3 {
-            margin-bottom: 1em;
-        }
-
-        div#options {
+        main {
             color: #222222;
             background-color: #eaeaea;
             border: 1px solid #cfcfcf;
@@ -38,6 +34,10 @@
             padding: 16px;
             position: relative;
             width: 800px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1em;
         }
 
         div.option {
@@ -62,7 +62,7 @@
 </head>
 
 <body>
-    <div id="options">
+    <main>
         <h1>leanbro // Options</h1>
         <p>Options are automatically stored when leaving an input field. Grey placeholders show the default value.</p>
         <h2>Personalization</h2>
@@ -108,7 +108,7 @@
                 <input type="text" id="text_font_family"/>
             </div>
         </form>
-    </div>
+    </main>
     <script src="../js/defaults.js"></script>
     <script src="../js/functions.js"></script>
     <script src="../js/options.js"></script>
