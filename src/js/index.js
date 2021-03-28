@@ -1,21 +1,4 @@
 
-// Set the background image dependent on which image source has been configured.
-// TODO: Store the downloaded image in local browser storage.
-function set_background_image(items) {
-    switch (items.radio_image_source) {
-        case 'custom':
-            return 'url("' + items.text_custom_image_url + '")';
-        case 'pixabay':
-            // TODO: Download a random image from pixabay every hour.
-            break;
-        case 'wallhaven':
-            // TODO: Download a random image from wallhaven every hour.
-            break;
-        default:
-            return 'none'
-    }
-}
-
 // Set the salutation in context to the daytime.
 // TODO: If name size > x, insert a newline into salutation.
 // TODO: Change font color to black or white dependent of the background.
@@ -57,8 +40,7 @@ function clock() {
 
 
 load_options(function(items) {    
-    document.body.style.backgroundColor = items.text_background_color;
-    document.body.style.backgroundImage = set_background_image(items);
+    update_view(items);
     document.getElementById('salutation').innerText = set_salutation(items);
+    clock();
 });
-clock();

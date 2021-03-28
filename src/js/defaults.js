@@ -39,30 +39,3 @@ let greeting = {
     22: 'Good Evening',
     23: 'Good Evening',
 }
-
-// Load all stored options from the synchronous chrome storage.
-//   @callback<function> Run the callback when all options are loaded.
-//                       Options will be provided as the 'items' variable.
-function load_options(callback) {
-    let options = {};
-    for (const [key, default_value] of Object.entries(defaults)) {
-        options[key] = default_value
-    }
-    chrome.storage.sync.get(options, callback);
-}
-
-// Iterate over all options, filter them and run a callback on those options.
-//   @prefix<str>           Only use options that start with this prefix.
-//   @callback<function>    Use the filtered options as parameter for this callback.
-//   @payload<object>       If a payload is added, it will be made available in the callback.
-function options_iterator(prefix, callback, payload=null) {
-    for (const [key, default_value] of Object.entries(defaults)) {
-        if (key.startsWith(prefix)) {
-            if (payload == null) {
-                callback(key, default_value);
-            } else {
-                callback(key, default_value, payload);
-            }
-        }
-    }
-}

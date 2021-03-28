@@ -2,13 +2,14 @@
 // Adds an event listener to an input field of type text.
 //   @key<str> The id of the input field. Should be the same in the defaults object.
 function add_text_listener(key, _) {
-    document.getElementById(key).addEventListener('input', function() {
+    document.getElementById(key).addEventListener('focusout', function() {
         let value = document.getElementById(key).value;
         if (value.length == 0) {
             chrome.storage.sync.set({ [key]: defaults[key] });
         } else {
             chrome.storage.sync.set({ [key]: value });
         }
+        load_options(update_view);
     });
 }
 
@@ -21,6 +22,7 @@ function add_radio_listener(key, _) {
             if (radio.checked) {
                 chrome.storage.sync.set({ [key]: radio.value })
             }
+            load_options(update_view);
         });
     }
 }
@@ -65,5 +67,8 @@ function set_all_options(items) {
 }
 
 
-load_options(set_all_options);
+load_options(function(items) {
+    update_view(items);
+    set_all_options(items);
+});
 add_all_listeners();
