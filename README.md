@@ -31,7 +31,7 @@ If you want to update the extension, increase the version number in the (manifes
 
 ## Install
 
-Drop and drag the *.crx file onto the extension page of your chrome browser and follow the instructions. After installing it, you can configure it via the extension popup symbol.
+Drag and drop the *.crx file onto the extension page of your chrome browser and follow the instructions. After installing it, you can configure it via the extension popup symbol.
 
 ## Support Me
 
