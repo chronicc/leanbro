@@ -1,18 +1,4 @@
 
-// Adds an event listener to an input field of type text.
-//   @key<str> The id of the input field. Should be the same in the defaults object.
-function add_text_listener(key, _) {
-    document.getElementById(key).addEventListener('focusout', function() {
-        let value = document.getElementById(key).value;
-        if (value.length == 0) {
-            chrome.storage.sync.set({ [key]: defaults[key] });
-        } else {
-            chrome.storage.sync.set({ [key]: value });
-        }
-        load_options(update_view);
-    });
-}
-
 // Adds an event listener to an input field of type radio.
 //   @key<str> The id of the input field. Should be the same in the defaults object.
 function add_radio_listener(key, _) {
@@ -25,6 +11,30 @@ function add_radio_listener(key, _) {
             load_options(update_view);
         });
     }
+}
+
+// Adds an event listener to a select field.
+//   @key<str> The id of the select field. Should be the same in the defaults object.
+function add_select_listener(key, _) {
+    document.getElementById(key).addEventListener('change', function() {
+        let value = document.getElementById(key).value;
+        chrome.storage.sync.set({ [key]: value });
+        load_options(update_view);
+    });
+}
+
+// Adds an event listener to an input field of type text.
+//   @key<str> The id of the input field. Should be the same in the defaults object.
+function add_text_listener(key, _) {
+    document.getElementById(key).addEventListener('focusout', function() {
+        let value = document.getElementById(key).value;
+        if (value.length == 0) {
+            chrome.storage.sync.set({ [key]: defaults[key] });
+        } else {
+            chrome.storage.sync.set({ [key]: value });
+        }
+        load_options(update_view);
+    });
 }
 
 // Sets the checked property on a form with radio buttons.
@@ -41,8 +51,16 @@ function set_radio_option(key, _, items) {
     }
 }
 
-// Sets the value of a input field of type text.
-//   @key<str>      The name of the radio buttons. Should be the same in the defaults obect.
+// Sets the value of a select field.
+//   @key<str>      The name of the select element. Should be the same in the defaults obect.
+//   @items<object> An object with all items stored in the synchronous chrome storage.
+function set_select_option(key, _, items) {
+    let field = document.getElementById(key);
+    field.value = items[key];
+}
+
+// Sets the value of an input field of type text.
+//   @key<str>      The name of text input. Should be the same in the defaults obect.
 //   @items<object> An object with all items stored in the synchronous chrome storage.
 function set_text_option(key, _, items) {
     let field = document.getElementById(key);
@@ -56,13 +74,15 @@ function set_text_option(key, _, items) {
 
 // Register the event listeners for all input types here.
 function add_all_listeners() {
-    options_iterator('radio_', add_radio_listener)
-    options_iterator('text_', add_text_listener)
+    options_iterator('radio_', add_radio_listener);
+    options_iterator('select_', add_select_listener);
+    options_iterator('text_', add_text_listener);
 }
 
 // Register the value setters for all input types here.
 function set_all_options(items) {
-    options_iterator('radio_', set_radio_option, items)
+    options_iterator('radio_', set_radio_option, items);
+    options_iterator('select_', set_select_option, items);
     options_iterator('text_', set_text_option, items);
 }
 

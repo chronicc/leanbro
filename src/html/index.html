@@ -73,6 +73,10 @@
         p#salutation {
             font-size: 4em;
         }
+
+        span#time-format {
+            font-size: 0.5em;
+        }
     </style>
 </head>
 
@@ -80,7 +84,10 @@
     <main>
         <p id="salutation"></p>
         <div id="line"></div>
-        <div id="clock"></div>
+        <div id="clock">
+            <span id="time"></span>
+            <span id="time-format"></span>
+        </div>
     </main>
     <div id="credits"><!-- Credits for the background image. Can contain author name and host logo/link for example. --></div>
     <div id="weather"><!-- Reserved for a weather applet. --></div>

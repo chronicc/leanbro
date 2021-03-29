@@ -9,38 +9,44 @@ function set_salutation(items) {
 
 // Set the clock.
 // TODO: Make clock format configurable in options page.
-function clock() {
+function clock(format) {
     let date = new Date();
     let h = date.getHours();
     let m = date.getMinutes();
     let s = date.getSeconds();
+    let session = '';
 
-    // var session = "AM";
+    if (format == 'half') {
+        session = ' AM';
+    
+        if(h == 0){
+            h = 12;
+        }
+    
+        if(h > 12){
+            h = h - 12;
+            session = ' PM';
+        }
+    }
 
-    // if(h == 0){
-    //     h = 12;
-    // }
+    h = (h < 10) ? '0' + h : h;
+    m = (m < 10) ? '0' + m : m;
+    s = (s < 10) ? '0' + s : s;
 
-    // if(h > 12){
-    //     h = h - 12;
-    //     session = "PM";
-    // }
+    let time = h + ':' + m + ':' + s;
 
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
+    document.getElementById('time').innerText = time;
+    document.getElementById('time').textContent = time;
+    document.getElementById('time-format').innerText = session;
 
-    let time = h + ":" + m + ":" + s;
-
-    document.getElementById('clock').innerText = time;
-    document.getElementById('clock').textContent = time;
-
-    setTimeout(clock, 1000);
+    setTimeout(function() {
+        clock(format);
+    }, 1000);
 }
 
 
 load_options(function(items) {    
     update_view(items);
     document.getElementById('salutation').innerText = set_salutation(items);
-    clock();
+    clock(items.select_clock_format);
 });

@@ -19,7 +19,7 @@ leanbro does not disturb you. It supports you with reaching and staying in [the 
 
 * Display a custom background image
 * Salutation with custom name
-* Live Clock
+* Live Clock with 12h/24h format
 
 ## Build
 

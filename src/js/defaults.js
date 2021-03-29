@@ -4,6 +4,7 @@
 // Also use the correct prefix corresponding to the input type to ensure the options_iterator works correct.
 let defaults = {
     'radio_image_source': 'disabled',
+    'select_clock_format': 'full',
     'text_background_color': '#222222',
     'text_custom_image_url': '',
     'text_font_family': 'sans-serif',

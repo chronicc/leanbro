@@ -8,6 +8,7 @@
         body,
         div,
         input,
+        select,
         p {
             margin: 0;
             padding: 0;
@@ -31,12 +32,19 @@
             left: 50%;
             margin: 16px 16px 16px -416px;
             min-height: 400px;
+            opacity: 0.9;
             padding: 16px;
             position: relative;
             width: 800px;
         }
 
-        h1, h2, h3 {
+        main>* {
+            opacity: 1.0;
+        }
+
+        h1,
+        h2,
+        h3 {
             margin-bottom: 1em;
         }
 
@@ -50,11 +58,16 @@
             width: 2em;
         }
 
-        div.option > input[type=radio] {
+        div.option>input[type=radio] {
             width: 2em;
         }
 
-        div.option > input[type=text] {
+        div.option>input[type=text] {
+            float: right;
+            width: 550px;
+        }
+
+        div.option>select {
             float: right;
             width: 550px;
         }
@@ -70,7 +83,15 @@
             <div class="option">
                 <div class="radio_spacer"></div>
                 <label>Name</label>
-                <input type="text" id="text_username"/>
+                <input type="text" id="text_username" />
+            </div>
+            <div class="option">
+                <div class="radio_spacer"></div>
+                <label>Clock Format</label>
+                <select id="select_clock_format">
+                    <option value="full">24 Hours</option>
+                    <option value="half">12 Hours</option>
+                </select>
             </div>
         </form>
         <h2>Image Source</h2>
@@ -85,14 +106,16 @@
                 <input type="text" id="text_custom_image_url" />
             </div>
             <div class="option">
-                <input type="radio" id="radio_image_pixabay" name="radio_image_source" value="pixabay" disabled="disabled" />
+                <input type="radio" id="radio_image_pixabay" name="radio_image_source" value="pixabay"
+                    disabled="disabled" />
                 <label>Pixabay API Key</label>
-                <input type="text" id="text_pixabay_api_key" />
+                <input type="text" id="text_pixabay_api_key" disabled="disabled" />
             </div>
             <div class="option">
-                <input type="radio" id="radio_image_wallhaven" name="radio_image_source" value="wallhaven" disabled="disabled" />
+                <input type="radio" id="radio_image_wallhaven" name="radio_image_source" value="wallhaven"
+                    disabled="disabled" />
                 <label>Wallhaven API Key</label>
-                <input type="text" id="text_wallhaven_api_key" />
+                <input type="text" id="text_wallhaven_api_key" disabled="disabled" />
             </div>
         </form>
         <h2>Visuals</h2>
@@ -100,12 +123,12 @@
             <div class="option">
                 <div class="radio_spacer"></div>
                 <label>Background Color</label>
-                <input type="text" id="text_background_color"/>
+                <input type="text" id="text_background_color" />
             </div>
             <div class="option">
                 <div class="radio_spacer"></div>
                 <label>Font Family</label>
-                <input type="text" id="text_font_family"/>
+                <input type="text" id="text_font_family" />
             </div>
         </form>
     </main>
