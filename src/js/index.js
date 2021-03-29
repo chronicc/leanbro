@@ -1,6 +1,6 @@
 
 import { greeting } from './defaults.js';
-import { load_options, update_view } from './functions.js';
+import { load_options, update_background, update_fonts } from './functions.js';
 
 // Set the salutation in context to the daytime.
 // TODO: If name size > x, insert a newline into salutation.
@@ -49,7 +49,8 @@ function clock(format) {
 
 
 load_options(function(items) {    
-    update_view(items);
+    update_background(items);
+    update_fonts(items);
     document.getElementById('salutation').innerText = set_salutation(items);
     clock(items.select_clock_format);
 });

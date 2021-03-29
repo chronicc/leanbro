@@ -1,69 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <title>leanbro // options</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../third_party/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/default.css" />
+    <title>leanbro // options</title>
 </head>
 
 <body>
-    <main id="options">
-        <h1>leanbro // Options</h1>
-        <p>Options are automatically stored when leaving an input field. Grey placeholders show the default value.</p>
-        <h2>Personalization</h2>
-        <form>
-            <div class="option">
-                <div class="radio_spacer"></div>
-                <label>Name</label>
-                <input type="text" id="text_username" />
+    <div class="container">
+        <div class="card border rounded shadow my-5">
+            <div class="card-body p-5">
+                <div class="py-3 text-center">
+                    <img class="d-block mx-auto mb-4" src="../images/icon64.png" alt width="64" height="64" />
+                    <h1>Options</h1>
+                    <p class="lead">Configure here the appearance of leanbro.</p>
+                </div>
+                <div class="py-2">
+                    <h2>Personalization</h2>
+                    <form>
+                        <div class="form-group">
+                            <div class="radio_spacer"></div>
+                            <label for="text_username">Name</label>
+                            <input class="form-control" type="text" id="text_username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="select_clock_format">Clock Format</label>
+                            <select class="form-control" id="select_clock_format">
+                                <option value="full">24 Hours</option>
+                                <option value="half">12 Hours</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="py-2">
+                    <h2>Background Image</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="select_image_source">Image Provider</label>
+                            <select class="form-control" id="select_image_source" aria-describedby="help_image_source">
+                                <option value="disabled">No Image</option>
+                                <option value="custom">Custom Url</option>
+                                <option disabled value="pixabay">Pixabay API</option>
+                                <option disabled value="wallhaven">Wallhaven API</option>
+                            </select>
+                            <small id="help_image_source" class="form-text text-muted">Select a provider for the
+                                background image.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="text_background_color">Background Color</label>
+                            <input class="form-control" type="text" id="text_background_color"
+                                aria-describedby="help_background_color" />
+                            <small id="help_background_color" class="form-text text-muted">The color used when no image
+                                provider is selected.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="text_custom_image_url">Custom Url</label>
+                            <input class="form-control" type="text" id="text_custom_image_url"
+                                aria-describedby="help_custom_image_url" />
+                            <small id="help_custom_image_url" class="form-text text-muted">The url must point directly
+                                to the image.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="text_pixabay_api_key">Pixabay API Key</label>
+                            <input class="form-control" type="text" id="text_pixabay_api_key" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label for="text_wallhaven_api_key">Wallhaven API Key</label>
+                            <input class="form-control" type="text" id="text_wallhaven_api_key" disabled="disabled" />
+                        </div>
+                    </form>
+                </div>
+                <div class="py-2">
+                    <h4>Fonts</h4>
+                    <form class="form-group">
+                        <div class="form-group">
+                            <label for="text_font_family">Startpage</label>
+                            <input class="form-control" type="text" id="text_font_family"
+                                aria-describedby="help_font_family" />
+                            <small id="help_font_family" class="form-text text-muted">The font used for all elements on
+                                the startpage.</small>
+                        </div>
+                    </form>
+                    <div class="row py-3">
+                        <div class="col-sm text-left">
+                            <button type="submit" class="btn btn-primary" id="btn-save" data-toggle="tooltip"
+                                data-placement="top" title="Save your changes.">Save</button>
+                            <button type="reset" class="btn btn-secondary" id="btn-reset" data-toggle="tooltip"
+                                data-placement="top" title="Reset changed values.">Reset</button>
+                        </div>
+                        <div class="col-sm text-right">
+                            <button type="reset" class="btn btn-danger" data-toggle="modal" data-target="#purge-modal"
+                                data-toggle="tooltip" data-placement="top" title="Reset to default values.">Purge
+                                Config</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="option">
-                <div class="radio_spacer"></div>
-                <label>Clock Format</label>
-                <select id="select_clock_format">
-                    <option value="full">24 Hours</option>
-                    <option value="half">12 Hours</option>
-                </select>
+        </div>
+    </div>
+
+    <div class="modal fade" id="purge-modal" tabindex="-1" role="dialog" aria-labelledby="purge-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="purge-modal-label">Purge Config</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you really want to purge your configuration? This will reset all options to default values. This is not reversible.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No, better not.</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-purge">Yes, purge
+                        config!</button>
+                </div>
             </div>
-        </form>
-        <h2>Image Source</h2>
-        <form>
-            <div class="option">
-                <input type="radio" id="radio_image_disabled" name="radio_image_source" value="disabled" />
-                <label>Disabled</label>
-            </div>
-            <div class="option">
-                <input type="radio" id="radio_image_custom" name="radio_image_source" value="custom" />
-                <label>Custom Url</label>
-                <input type="text" id="text_custom_image_url" />
-            </div>
-            <div class="option">
-                <input type="radio" id="radio_image_pixabay" name="radio_image_source" value="pixabay"
-                    disabled="disabled" />
-                <label>Pixabay API Key</label>
-                <input type="text" id="text_pixabay_api_key" disabled="disabled" />
-            </div>
-            <div class="option">
-                <input type="radio" id="radio_image_wallhaven" name="radio_image_source" value="wallhaven"
-                    disabled="disabled" />
-                <label>Wallhaven API Key</label>
-                <input type="text" id="text_wallhaven_api_key" disabled="disabled" />
-            </div>
-        </form>
-        <h2>Visuals</h2>
-        <form>
-            <div class="option">
-                <div class="radio_spacer"></div>
-                <label>Background Color</label>
-                <input type="text" id="text_background_color" />
-            </div>
-            <div class="option">
-                <div class="radio_spacer"></div>
-                <label>Font Family</label>
-                <input type="text" id="text_font_family" />
-            </div>
-        </form>
-    </main>
+        </div>
+    </div>
+
+    <script src="../third_party/jquery.min.js"></script>
+    <script src="../third_party/bootstrap.bundle.min.js"></script>
     <script type="module" src="../js/defaults.js"></script>
     <script type="module" src="../js/functions.js"></script>
     <script type="module" src="../js/options.js"></script>

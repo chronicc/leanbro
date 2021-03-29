@@ -1,3 +1,6 @@
 # chrome extension
 *.crx
 *.pem
+
+# nodejs/npm
+node_modules
