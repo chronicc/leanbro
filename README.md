@@ -33,6 +33,9 @@ If you want to update the extension, increase the version number in the (manifes
 
 Drop and drag the *.crx file onto the extension page of your chrome browser and follow the instructions. After installing it, you can configure it via the extension popup symbol.
 
+## Support Me
+
+If you want to support my work, you can [buy me a beer](https://www.buymeacoffee.com/chronicc).
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
