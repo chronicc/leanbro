@@ -1,4 +1,7 @@
 
+import { greeting } from './defaults.js';
+import { load_options, update_view } from './functions.js';
+
 // Set the salutation in context to the daytime.
 // TODO: If name size > x, insert a newline into salutation.
 // TODO: Change font color to black or white dependent of the background.

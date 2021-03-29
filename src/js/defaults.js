@@ -2,7 +2,7 @@
 // The defaults object containing the default values for all options.
 // Ensure the html names (for radio) and ids (for the rest) are identical to the keys in this object.
 // Also use the correct prefix corresponding to the input type to ensure the options_iterator works correct.
-let defaults = {
+const defaults = {
     'radio_image_source': 'disabled',
     'select_clock_format': 'full',
     'text_background_color': '#222222',
@@ -14,7 +14,7 @@ let defaults = {
 }
 
 // A prepared list of greeting depending on hour of day.
-let greeting = {
+const greeting = {
     0: 'Good Morning',
     1: 'Good Morning',
     2: 'Good Morning',
@@ -40,3 +40,5 @@ let greeting = {
     22: 'Good Evening',
     23: 'Good Evening',
 }
+
+export { defaults, greeting };

@@ -1,4 +1,7 @@
 
+import { defaults } from './defaults.js';
+import { load_options, options_iterator, update_view } from './functions.js';
+
 // Adds an event listener to an input field of type radio.
 //   @key<str> The id of the input field. Should be the same in the defaults object.
 function add_radio_listener(key, _) {
@@ -74,16 +77,16 @@ function set_text_option(key, _, items) {
 
 // Register the event listeners for all input types here.
 function add_all_listeners() {
-    options_iterator('radio_', add_radio_listener);
-    options_iterator('select_', add_select_listener);
-    options_iterator('text_', add_text_listener);
+    options_iterator('radio_', defaults, add_radio_listener);
+    options_iterator('select_', defaults, add_select_listener);
+    options_iterator('text_', defaults, add_text_listener);
 }
 
 // Register the value setters for all input types here.
 function set_all_options(items) {
-    options_iterator('radio_', set_radio_option, items);
-    options_iterator('select_', set_select_option, items);
-    options_iterator('text_', set_text_option, items);
+    options_iterator('radio_', defaults, set_radio_option, items);
+    options_iterator('select_', defaults, set_select_option, items);
+    options_iterator('text_', defaults, set_text_option, items);
 }
 
 
