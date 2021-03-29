@@ -3,13 +3,9 @@ import { defaults } from './defaults.js'
 
 // Load all stored options from the synchronous chrome storage.
 //   @callback<function> Run the callback when all options are loaded.
-//                       Options will be provided as the 'items' variable.
+//                       Will pass the options as object to the callback.
 function load_options(callback) {
-    let options = {};
-    for (const [key, default_value] of Object.entries(defaults)) {
-        options[key] = default_value
-    }
-    chrome.storage.sync.get(options, callback);
+    chrome.storage.sync.get(defaults, callback);
 }
 
 // Iterate over all options, filter them and run a callback on those options.
