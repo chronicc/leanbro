@@ -1,0 +1,158 @@
+body,
+button,
+div,
+h1,
+h2,
+h3,
+hr,
+html,
+input,
+p,
+select {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    line-height: 1.2em;
+}
+
+body {
+    background-attachment: fixed;
+    background-color: #efefef;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: sans-serif;
+    z-index: 1;
+}
+
+button {
+    background-color: #efefef;
+    border: none;
+    outline: none;   
+    padding: 8px;
+    text-align: left;
+    width: 300px;
+}
+
+button:hover {
+    background-color: #24d48b;
+}
+
+button:active {
+    background-color: #168658;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.5em;
+    margin: 1em 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+hr {
+    border: 1px solid #aaaaaa;
+    margin: 1em 0;
+}
+
+main#index {
+    color: #ffffff;
+    position: fixed;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+    z-index: 1000;
+}
+
+main#options {
+    color: #222222;
+    background-color: #eaeaea;
+    border: 1px solid #cfcfcf;
+    border-radius: 16px;
+    left: 50%;
+    margin: 16px 16px 16px -416px;
+    min-height: 400px;
+    opacity: 0.9;
+    padding: 16px;
+    position: relative;
+    width: 800px;
+}
+
+main#popup {
+    padding: 16px;
+}
+
+main>* {
+    opacity: 1.0;
+}
+
+div#line {
+    border-bottom: 1px solid #ffffff;
+    display:inline-block;
+    height: 1px;
+    width: 60%;
+}
+
+div#clock {
+    font-size: 8em;
+}
+
+div#credits {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    bottom: 16px;
+    height: 100px;
+    left: 16px;
+    position: absolute;
+    width: 300px;
+    z-index: 900;
+}
+
+div#weather {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    height: 100px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 300px;
+    z-index: 900;
+}
+
+p#salutation {
+    font-size: 4em;
+}
+
+span#time-format {
+    font-size: 0.5em;
+}
+
+div.option {
+    margin: 0.5em 0;
+    width: 100%;
+}
+
+div.radio_spacer {
+    display: inline-block;
+    width: 2em;
+}
+
+div.option>input[type=radio] {
+    width: 2em;
+}
+
+div.option>input[type=text] {
+    float: right;
+    width: 550px;
+}
+
+div.option>select {
+    float: right;
+    width: 550px;
+}

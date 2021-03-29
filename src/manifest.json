@@ -23,6 +23,14 @@
         }
     },
     "options_page": "html/options.html",
+    "content_scripts": [{
+        "css": [
+            "css/default.css"
+        ],
+        "matches": [
+            "<all_urls>"
+        ]
+    }],
     "background": {
         "service_worker": "background.js"
     },
