@@ -33,6 +33,7 @@ $('#btn-reset').on('click', function() {
 });
 
 $('#btn-purge').on('click', function() {
+    chrome.storage.sync.clear();
     store_options(defaults);
     reload();
     alertify.notify('Purged config.', 'success');
