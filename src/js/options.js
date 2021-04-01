@@ -27,9 +27,7 @@ $('#btn-save').on('click', function() {
 });
 
 $('#btn-reset').on('click', function() {
-    load_options(function(items) {
-        options_iterator(defaults, set_option, items);
-    });
+    reload();
 });
 
 $('#btn-purge').on('click', function() {
