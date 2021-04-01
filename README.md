@@ -21,6 +21,10 @@ leanbro does not disturb you. It supports you with reaching and staying in [the 
 * Salutation with custom name
 * Live Clock with 12h/24h format
 
+## Purge Config
+
+When you experience problems with the extension (especially after an update), you can reset it with the **Purge Config** button on the options page. This will ensure a clean restore of the extension. You will lose your configured values in this process so make sure you want this.
+
 ## Build
 
 Run `make package KEY_LOCATIO=/path/to/extension/key.pem` to create the initial extension.
