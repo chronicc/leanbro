@@ -1,4 +1,11 @@
 
+const manifest = chrome.runtime.getManifest();
+
+// The meta object containing information about the extension.
+const meta = {
+    'meta_version': manifest.version
+}
+
 // The defaults object containing the default values for all options.
 // Ensure the html names (for radio) and ids (for the rest) are identical to the keys in this object.
 // Also use the correct prefix corresponding to the input type to ensure the options_iterator works correct.
@@ -41,4 +48,4 @@ const greeting = {
     23: 'Good Evening',
 }
 
-export { defaults, greeting };
+export { defaults, greeting, meta };
