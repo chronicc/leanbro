@@ -24,15 +24,18 @@ $('#btn-save').on('click', function() {
         store_option($(element));
     });
     reload();
+    alertify.notify('Saved changes.', 'success');
 });
 
 $('#btn-reset').on('click', function() {
     reload();
+    alertify.notify('Resetted changes.', 'success');
 });
 
 $('#btn-purge').on('click', function() {
     store_options(defaults);
     reload();
+    alertify.notify('Purged config.', 'success');
 });
 
 reload();
