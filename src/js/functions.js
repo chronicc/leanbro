@@ -52,7 +52,7 @@ function set_background_image(items) {
             // TODO: Download a random image from pixabay every hour.
             break;
         case 'wallhaven':
-            let api = new WallhavenApi(items.text_wallhaven_api_key);
+            let api = new WallhavenApi(items);
             api.set_background_image();
             break;
         default:
