@@ -1,7 +1,7 @@
 {
     "name": "leanbro",
     "description": "the leanest browser startpage.",
-    "version": "1.1",
+    "version": "1.2",
     "manifest_version": 3,
     "icons": {
         "16": "images/icon16.png",
