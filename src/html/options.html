@@ -45,7 +45,7 @@
                                 <option value="disabled">No Image</option>
                                 <option value="custom">Custom Url</option>
                                 <option disabled value="pixabay">Pixabay API</option>
-                                <option disabled value="wallhaven">Wallhaven API</option>
+                                <option value="wallhaven">Wallhaven API</option>
                             </select>
                             <small id="help_image_source" class="form-text text-muted">Select a provider for the
                                 background image.</small>
@@ -70,7 +70,9 @@
                         </div>
                         <div class="form-group">
                             <label for="text_wallhaven_api_key">Wallhaven API Key</label>
-                            <input class="form-control" type="text" id="text_wallhaven_api_key" disabled="disabled" />
+                            <input class="form-control" type="text" id="text_wallhaven_api_key"
+                                aria-describedby="help_wallhaven_api_key" />
+                            <small id="help_wallhaven_api_key" class="form-text text-muted">An API key is not necessary. If an API key is provided, NFSW images can be used.</small>
                         </div>
                     </form>
                 </div>
@@ -114,7 +116,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Do you really want to purge your configuration? This will reset all options to default values. This is not reversible!
+                    Do you really want to purge your configuration? This will reset all options to default values. This
+                    is not reversible!
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No, better not.</button>

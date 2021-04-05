@@ -17,7 +17,7 @@ const defaults = {
     'text_font_family': 'sans-serif',
     'text_username': 'Beauty',
     'text_pixabay_api_key': 'not yet implemented',
-    'text_wallhaven_api_key': 'not yet implemented'
+    'text_wallhaven_api_key': ''
 }
 
 // A prepared list of greeting depending on hour of day.

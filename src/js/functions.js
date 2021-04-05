@@ -1,5 +1,6 @@
 
 import { defaults } from './defaults.js'
+import { WallhavenApi } from './api_wallhaven.js';
 
 // Load all stored options from the synchronous chrome storage.
 //   @callback<func>    Run the callback when all options are loaded.
@@ -45,12 +46,14 @@ function options_iterator(object, callback, payload=null) {
 function set_background_image(items) {
     switch (items.select_image_source) {
         case 'custom':
-            return 'url("' + items.text_custom_image_url + '")';
+            document.body.style.backgroundImage = 'url("' + items.text_custom_image_url + '")';
+            break;
         case 'pixabay':
             // TODO: Download a random image from pixabay every hour.
             break;
         case 'wallhaven':
-            // TODO: Download a random image from wallhaven every hour.
+            let api = new WallhavenApi(items.text_wallhaven_api_key);
+            api.set_background_image();
             break;
         default:
             return 'none'
@@ -61,7 +64,7 @@ function set_background_image(items) {
 //   @items<object> An object with all items stored in the synchronous chrome storage.
 function update_background(items) {
     document.body.style.backgroundColor = items.text_background_color;
-    document.body.style.backgroundImage = set_background_image(items);
+    set_background_image(items);
 }
 
 // Update the font families.
