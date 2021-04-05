@@ -18,7 +18,8 @@ const defaults = {
     'text_username': 'Beauty',
     'text_pixabay_api_key': 'not yet implemented',
     'text_wallhaven_api_key': '',
-    'text_wallhaven_image_url': ''
+    'text_wallhaven_image_url': '',
+    'text_wallhaven_image_url_last': 0
 }
 
 // A prepared list of greeting depending on hour of day.
