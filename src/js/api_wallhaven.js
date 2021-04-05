@@ -17,7 +17,7 @@ class WallhavenApi {
                 'atleast': this.screen_size,
                 'categories': '100',
                 'q': 'nature',
-                'sorting': 'toplist',
+                'sorting': 'views',
                 'topRange': '1d'
             });
         } else {
@@ -25,7 +25,7 @@ class WallhavenApi {
                 'atleast': this.screen_size,
                 'categories': '100',
                 'q': 'nature',
-                'sorting': 'toplist',
+                'sorting': 'views',
                 'topRange': '1d'
             });
         }
