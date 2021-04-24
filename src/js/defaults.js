@@ -10,6 +10,7 @@ const meta = {
 // Ensure the html names (for radio) and ids (for the rest) are identical to the keys in this object.
 // Also use the correct prefix corresponding to the input type to ensure the options_iterator works correct.
 const defaults = {
+    'background_image_url': '',
     'select_clock_format': 'full',
     'select_image_source': 'disabled',
     'text_background_color': '#f8f9fa',
