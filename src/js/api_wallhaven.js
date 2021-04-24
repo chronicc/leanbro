@@ -40,7 +40,10 @@ class WallhavenApi {
         fetch(this.endpoint + '/search' + vars)
             .then(response => response.json())
             .then(response => {
-                this.update_image_url(response.data[0].path);
+                let batch = Math.floor(Math.random() * response.data.length);
+                console.log('Batch: ' + batch);
+                let url = response.data[batch].path;
+                this.update_image_url(url);
                 this.update_body();
             });        
     }
