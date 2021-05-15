@@ -40,31 +40,11 @@ function options_iterator(object, callback, payload=null) {
     }
 }
 
-
-// Set the background image dependent on which image source has been configured.
-// TODO: Store the downloaded image in local browser storage.
-function set_background_image(items) {
-    switch (items.select_image_source) {
-        case 'custom':
-            document.body.style.backgroundImage = 'url("' + items.text_custom_image_url + '")';
-            break;
-        case 'pixabay':
-            // TODO: Download a random image from pixabay every hour.
-            break;
-        case 'wallhaven':
-            let api = new WallhavenApi(items);
-            api.set_background_image();
-            break;
-        default:
-            return 'none'
-    }
-}
-
 // Update the view representation.
 //   @items<object> An object with all items stored in the synchronous chrome storage.
 function update_background(items) {
     document.body.style.backgroundColor = items.text_background_color;
-    set_background_image(items);
+    document.body.style.backgroundImage = 'url("' + this.image_url + '")';
 }
 
 // Update the font families.
