@@ -1,7 +1,8 @@
 {
-  "dependencies": {
+  "devDependencies": {
     "alertifyjs": "^1.13.1",
     "bootstrap": "^4.6.0",
+    "coffeescript": "^2.5.1",
     "jquery": "^3.6.0"
   }
 }

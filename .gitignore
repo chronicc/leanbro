@@ -4,3 +4,6 @@
 
 # nodejs/npm
 node_modules
+
+# project specific
+/extension/leanbro.js
