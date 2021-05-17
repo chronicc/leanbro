@@ -1,5 +1,6 @@
 {
-  "dependencies": {
+  "name": "leanbro",
+  "devDependencies": {
     "alertifyjs": "^1.13.1",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0"
