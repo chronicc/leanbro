@@ -1,9 +1,7 @@
 
-const manifest = chrome.runtime.getManifest();
-
 // The meta object containing information about the extension.
 const meta = {
-    'meta_version': manifest.version
+    'version': chrome.runtime.getManifest().version
 }
 
 // The defaults object containing the default values for all options.

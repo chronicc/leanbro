@@ -19,18 +19,10 @@
             "16": "images/icon16.png",
             "32": "images/icon32.png",
             "64": "images/icon64.png",
-            "128": "/images/icon128.png"
+            "128": "images/icon128.png"
         }
     },
     "options_page": "html/options.html",
-    "content_scripts": [{
-        "css": [
-            "css/default.css"
-        ],
-        "matches": [
-            "<all_urls>"
-        ]
-    }],
     "background": {
         "service_worker": "background.js"
     },
@@ -39,5 +31,8 @@
         "scripting",
         "storage",
         "tabs"
+    ],
+    "host_permissions": [
+        "https://wallhaven.cc/"
     ]
 }
